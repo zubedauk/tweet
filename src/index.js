@@ -19,7 +19,7 @@ btnSubmit.addEventListener("click",function(event){
         paraEl.textContent=msg.value;
         paraEl.appendChild(btnDel);
         tweet.appendChild(paraEl);
-      
+        
     
     btnDel.addEventListener("click",function(e){
         btnDel.parentNode.remove();
@@ -32,18 +32,20 @@ btnSubmit.addEventListener("click",function(event){
 })
  
 msg.addEventListener("keyup",function(e){
-    arrTweet=msg.value.split(" ");
-    words.textContent=arrTweet.length;
-    words.textContent=arrTweet.length;
-    if(e.keyCode==8){
+        console.log(msg.value.length);
         arrTweet=msg.value.split(" ");
-        console.log(arrTweet);
-    }
-    if(arrTweet.length>10){
-        msg.style.backgroundColor="red";
-    }
-    else{
-        msg.style.backgroundColor="white";
-    }
+
+        words.textContent=msg.value.length;
+        if(e.keyCode==8){
+            arrTweet=msg.value.split(" ");
+            console.log(arrTweet);
+        }
+        if(msg.value.length>280){
+            msg.style.backgroundColor="red";
+        }
+        else{
+            msg.style.backgroundColor="white";
+        }
+        
     
  });
