@@ -1,0 +1,54 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-size:10px;
+}
+#container{
+    font-size:1.2rem;
+    background-color:#e4f3fc;
+    width:70%;
+    padding: 1rem;
+}
+#tweet{
+    width: 100%;
+   background-color:whitesmoke; 
+}
+#msg{
+    margin-left:9rem;
+    min-width:50%;
+    float: left;
+    
+    
+}
+#btnSubmit{
+    background-color: rgb(106, 84, 235);
+    width:5rem;
+    height:2rem;
+    
+    
+}
+#words{
+    margin-left:20rem;
+    width:10%;
+
+   
+}
+.del{
+   background-color: blue;
+   width:5rem;
+   height:2rem;
+   float: right;
+}
+.para{
+    height:2rem;
+    margin-top: 0.2rem;
+    
+}
+
