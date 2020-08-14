@@ -3,6 +3,7 @@ let btnSubmit=document.getElementById("btnSubmit");
 let msg=document.getElementById("msg");   
 let tweet=document.getElementById("tweet");
 let words=document.getElementById("words");
+let arrTweet;
 let count=1;
 let limitMsg;
 let wordCount=0;
@@ -18,7 +19,8 @@ btnSubmit.addEventListener("click",function(event){
         paraEl.textContent=msg.value;
         paraEl.appendChild(btnDel);
         tweet.appendChild(paraEl);
-    ////////delete element when click on delete button
+      
+    
     btnDel.addEventListener("click",function(e){
         btnDel.parentNode.remove();
        
@@ -30,64 +32,18 @@ btnSubmit.addEventListener("click",function(event){
 })
  
 msg.addEventListener("keyup",function(e){
-    if(wordCount<=5){
- 
-        if(e.keyCode===32 && msg.value.charAt(msg.value.length-2)!=" " && msg.value.length>1){ 
-                wordCount++;
-                words.textContent=wordCount;
-            }
-        //increase no of words after .
-        if(e.keyCode===190 && msg.value.charAt(msg.value.length-2)!=" " && msg.value.length>1){ 
-            wordCount++;
-        //   alert("okk");
-            words.textContent=wordCount;
-        }
-        //remove words with backspace and discount no of words
-    if(e.keyCode===8 && msg.value.charAt(msg.value.length-1)===" "){
-    // console.log(msg.value.charAt(msg.value.length-1));
-        wordCount--;
-        words.textContent=wordCount;
-        console.log(msg.value.length);
+    arrTweet=msg.value.split(" ");
+    words.textContent=arrTweet.length;
+    words.textContent=arrTweet.length;
+    if(e.keyCode==8){
+        arrTweet=msg.value.split(" ");
+        console.log(arrTweet);
     }
-    // remove the last word from text area
-    if(e.keyCode===8 && msg.value.length===0){
-    console.log("zero");
-        //wordCount--;
-        words.textContent=0;
-        wordCount=0;
-        
-        }
-        limitMsg=msg.value;
-    }else{
-        
+    if(arrTweet.length>10){
         msg.style.backgroundColor="red";
-        msg.value=limitMsg;
-
-        words.textContent=wordCount;
-           //remove words with backspace and discount no of words
-    if(e.keyCode===8 && msg.value.charAt(msg.value.length-1)===" "){
-        // console.log(msg.value.charAt(msg.value.length-1));
-          
-            msg.style.backgroundColor="white";
-
-            words.textContent=wordCount;
-            wordCount--;
-        }
-        // remove the last word from text area
-        if(e.keyCode===8 && msg.value.length===0){
-        console.log("zero");
-            //wordCount--;
-            words.textContent=0;
-            wordCount=0;
-            msg.style.backgroundColor="white";
-            } 
     }
-});
- msg.addEventListener("keydown",function(e){
-   
-    // if(e.keyCode===8 && msg.value.charAt(msg.value.length-2)!=" "){ 
-    //     wordCount--;
-    // }
-
+    else{
+        msg.style.backgroundColor="white";
+    }
     
  });
