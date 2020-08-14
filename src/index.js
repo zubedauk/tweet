@@ -58,7 +58,8 @@ msg.addEventListener("keyup",function(e){
             msg.style.backgroundColor="red";
         }
         else{
-            msg.style.backgroundColor="white";
+            msg.style.backgroundColor="green";
+            msg.style.color="white";
         }
         
     

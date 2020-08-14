@@ -18,6 +18,7 @@ body{
 }
 #tweet{
     width: 100%;
+    height: auto;
    background-color:whitesmoke;
    float: left; 
    border 1rem solid red;
@@ -25,8 +26,11 @@ body{
 #msg{
     margin-left:9rem;
     min-width:50%;
+    height:auto;
     float: left;
     margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
     
 }
 #btnSubmit{
